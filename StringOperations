@@ -27,7 +27,11 @@ public class CombineStrings {
 		System.out.println(str2.replace("n", "N"));
 		System.out.println(str1.replaceAll(str1, str2));
 		System.out.println(str1.replaceAll("t", "T"));
-		System.out.println(str1.replaceFirst("t", "T"));		
+		System.out.println(str1.replaceFirst("t", "T"));
+System.out.println(str1.endsWith(str1));
+		System.out.println(str1.endsWith("y"));
+		System.out.println(str2.equals(str4));
+System.out.println(str1.matches(str1));
 	}
 
 }
