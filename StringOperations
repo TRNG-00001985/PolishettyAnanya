@@ -1,0 +1,33 @@
+package code;
+public class CombineStrings {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str1="Polishetty";
+		String str2="Ananya";
+		System.out.println(str1.compareTo(str2));
+		System.out.println(str2.compareTo(str1));
+		System.out.println(str1+str2);
+		System.out.println(str1.concat(str2));
+		System.out.println(str1.length());
+		System.out.println(str2.length());
+		String str3=str1+str2;
+		System.out.println(str3.length());
+		System.out.println(str1.substring(3));
+		System.out.println(str3.substring(3,12));
+		System.out.println(str1.trim());
+		System.out.println(str1);
+		System.out.println(str3);		
+		System.out.println(str3.trim());
+		System.out.println(str2.split("n",2));
+		System.out.println(str1.toUpperCase());
+		System.out.println(str1.toLowerCase());
+		System.out.println(str1.indexOf("o"));
+		System.out.println(str2.lastIndexOf("A"));
+		System.out.println(str2.replace("Ananya", "Honey"));
+		System.out.println(str2.replace("n", "N"));
+		System.out.println(str1.replaceAll(str1, str2));
+		System.out.println(str1.replaceAll("t", "T"));
+		System.out.println(str1.replaceFirst("t", "T"));		
+	}
+
+}
