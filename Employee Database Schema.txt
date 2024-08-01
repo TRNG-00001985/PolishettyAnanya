@@ -1,0 +1,44 @@
+Employee Database Schema
+Employees
+
+EmployeeID	EmployeeName	DepartmentID
+1	                       John	                         1
+2	                       Jane	                         2
+3	                       Mark                        	1
+4	                       Emily	                3
+5	                       Karen	                5
+Departments
+
+DepartmentID 	DepartmentName
+1	                                  Sales
+2	                                   HR
+3	                                   IT
+4	                           Marketing
+5                                	NULL
+Projects
+
+ProjectID 	ProjectName	 DepartmentID
+101	                 Project A	1
+102	                 Project B	2
+103                  Project C 	3
+104	                Project D        	4
+105	                Project E 	NULL
+Questions
+1.Retrieve the list of employees along with their department names where employees are associated with departments.
+      ANS:select emp_id,emp_name,d.dep_id,dep_name from employees e inner join departments d where e.dep_id=d.dep_id ;
+2.Retrieve all employees and their associated department names. If an employee does not belong to a department, show NULL.
+      ANS:select emp_id,emp_name,dep_name from employees e left outer join departments d on e.dep_id=d.dep_id;
+3.Retrieve all departments and the names of employees in those departments. If a department does not have any employees, show NULL.
+      ANS:select emp_id,emp_name,dep_name from employees e right outer join departments d on e.dep_id=d.dep_id;
+4.Retrieve all possible combinations of employees and projects.
+      ANS:select * from employees cross join projects;
+5.Retrieve the list of employees whose department ID is greater than the department ID of 'HR' department.
+      ANS:select * from employees e inner join departments d on e.dep_id>d.dep_id where d.dep_id in (select d.dep_id from departments d  where dep_name="HR");
+6.Retrieve the list of projects along with their department names, where the projects are associated with departments
+     ANS:select p_id,p_name,d.dep_id,dep_name from  projects p inner join departments d where p.dep_id=d.dep_id ;
+7.Find employees who are not assigned to any department
+    ANS:SELECT * from employees e LEFT JOIN departments d ON e.dep_id = d.dep_id WHERE d.dep_id IS NULL;
+8.Find departments that have no employees
+   ANS:SELECT * from departments d LEFT JOIN employees e ON e.dep_id = d.dep_id WHERE e.dep_id IS NULL;
+9.Find all departments along with the number of employees in each department
+   ANS:select d.dep_id,dep_name,count(emp_id) from departments d left join employees e on e.dep_id=d.dep_id group by e.dep_id;
